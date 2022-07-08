@@ -157,6 +157,15 @@ contract DogeDeckNFTV1 is ERC721, Ownable, Pausable, ReentrancyGuard {
         return baseURI;
     }
 
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal override {
+        super._beforeTokenTransfer(from, to, tokenId);
+        require(!paused(), "paused");
+    }
+
     function setMintConf(
         string memory baseURI_,
         bytes32 freeMintMerkleRoot_,
