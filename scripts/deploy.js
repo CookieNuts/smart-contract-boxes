@@ -1,4 +1,6 @@
+const { keccak256, parseEther } = require('ethers/lib/utils');
 const { hexToBytes } = require('web3-utils');
+const { MerkleTree } = require('merkletreejs')
 
 let freeMintAddresses = [
     "0x141f9528C041a76FD2F20A9B9B4873Bf7D0AF86E",

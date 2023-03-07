@@ -7,17 +7,16 @@ require("hardhat-gas-reporter");
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
-const ALCHEMY_API_KEY_RINKEBY = process.env.ALCHEMY_API_KEY_RINKEBY;
-const ALCHEMY_API_KEY_ROPSTEN = process.env.ALCHEMY_API_KEY_ROPSTEN;
+const ALCHEMY_API_KEY_GOERLI = process.env.ALCHEMY_API_KEY_GOERLI;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const PUBLIC_KEY = process.env.PUBLIC_KEY;
 const REPORT_GAS = process.env.REPORT_GAS;
 const COINMARKETCAP = process.env.COINMARKETCAP_API_KEY;
 
 module.exports = {
-    // defaultNetwork: "rinkeby",
+    // defaultNetwork: "goerli",
     solidity: {
-        version: "0.8.12",
+        version: "0.8.18",
         // solidity optimizer setting
         settings: {
             optimizer: {
@@ -27,12 +26,8 @@ module.exports = {
         }
     },
     networks: {
-        rinkeby: {
-            url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY_RINKEBY}`,
-            accounts: [`${PRIVATE_KEY}`]
-        },
-        ropsten: {
-            url: `https://eth-ropsten.alchemyapi.io/v2/${ALCHEMY_API_KEY_ROPSTEN}`,
+        goerli: {
+            url: `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_API_KEY_GOERLI}`,
             accounts: [`${PRIVATE_KEY}`]
         }
     },
